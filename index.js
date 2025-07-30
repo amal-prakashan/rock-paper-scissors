@@ -4,6 +4,10 @@ const choices = ["rock", "paper", "scissor"];
 const playerDisplay = document.getElementById("playerDisplay");
 const computerDisplay = document.getElementById("computerDisplay");
 const resultDisplay = document.getElementById("resultDisplay");
+const playerScore = document.getElementById("playerScore");
+const computerScore = document.getElementById("computerScore");
+let playerScores = 0;
+let computerScores = 0;
 
 function playGame(playerChoice){
   
@@ -47,9 +51,13 @@ function playGame(playerChoice){
   switch(result){
     case "You Win!":
       resultDisplay.classList.add("greenText");
+      playerScores++;
+      playerScore.textContent = playerScores;
       break;
     case "You Lose 😒":
       resultDisplay.classList.add("redText");
+      computerScores++;
+      computerScore.textContent = computerScores;
   }
 
 }

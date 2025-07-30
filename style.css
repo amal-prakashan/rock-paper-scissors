@@ -120,12 +120,12 @@ h1 {
 
 /* Colors */
 .greenText,
-#playerDisplay {
+#playerDisplay, #playerScore {
   color: rgba(0, 128, 0, 0.759);
 }
 
 .redText,
-#computerDisplay {
+#computerDisplay, #computerScore {
   color: tomato;
 }
 
