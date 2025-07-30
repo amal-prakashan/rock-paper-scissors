@@ -1,0 +1,95 @@
+body{
+  font-family: arial;
+  align-content: center;
+  background-color: rgba(128, 128, 128, 0.195);
+  height: 100vh;
+}
+
+.iphone{
+  display: flex;
+  background-color: white;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: solid 6px;
+  max-width: 370px;
+  height: 700px;
+  border-radius: 50px;
+  border-color: rgba(0, 0, 0, 0.825);
+  margin: auto;
+  position: relative;
+  box-shadow: 5px 5px 10px rgba(0,0,0,0.35);
+}
+
+.notch{
+  background-color: rgba(0, 0, 0, 0.721);
+  height: 35px;
+  width: 90px;
+  border-radius: 20px;
+  position: absolute;
+  top: 2.5%;
+  cursor: pointer;
+}
+.notch:active{
+  transform: scale(1.1);
+}
+
+.choices button{
+  font-size: 3em;
+  background-color: white;
+  border: solid 2px;
+  width: 90px;
+  height: 90px;
+  border-radius: 45px;
+  margin: 10px;
+  margin-bottom: 40px;
+  cursor: pointer;
+  transition: background-color 0.15s;
+}
+.choice-btn:hover{
+  transform: scale(1.1);
+  background-color: rgba(0,0,0,0.05)
+}
+
+.player, .computer{
+  font-size: 1.4em;
+  font-weight: bold;
+}
+
+#resultDisplay{
+  font-size: 2em;
+  margin-top: 40px;
+  margin-bottom: 30px;
+  font-weight: bold;
+}
+
+.playerScore{
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 5px;
+  color:rgba(0, 0, 0, 0.721)
+
+}
+
+.computerScore{
+  font-size: 18px;
+  font-weight: 700;
+  color:rgba(0, 0, 0, 0.721)
+}
+
+.backSpace{
+  height: 3px;
+  width: 150px;
+  background-color:rgba(0, 0, 0, 0.721);
+  position: absolute;
+  bottom: 0.1%;
+  border-radius: 4px;
+}
+
+.greenText,#playerDisplay{
+  color: rgba(0, 128, 0, 0.759);
+}
+
+.redText, #computerDisplay{
+  color: tomato;
+}
