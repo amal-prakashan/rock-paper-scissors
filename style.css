@@ -1,95 +1,179 @@
-body{
-  font-family: arial;
-  align-content: center;
+/* General body setup */
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
   background-color: rgba(128, 128, 128, 0.195);
-  height: 100vh;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
 }
 
-.iphone{
+/* Phone container */
+.iphone {
   display: flex;
-  background-color: white;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  border: solid 6px;
+  background-color: white;
+  border: solid 6px rgba(0, 0, 0, 0.825);
   max-width: 370px;
-  height: 700px;
+  width: 95%;
+  height: 90dvh;
   border-radius: 50px;
-  border-color: rgba(0, 0, 0, 0.825);
-  margin: auto;
   position: relative;
-  box-shadow: 5px 5px 10px rgba(0,0,0,0.35);
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.35);
+  padding: 20px;
+  box-sizing: border-box;
 }
 
-.notch{
+/* Notch */
+.notch {
   background-color: rgba(0, 0, 0, 0.721);
   height: 35px;
   width: 90px;
   border-radius: 20px;
   position: absolute;
-  top: 2.5%;
+  top: 15px;
+  left: 50%;
+  transform: translateX(-50%);
   cursor: pointer;
+  transition: transform 0.2s;
 }
-.notch:active{
-  transform: scale(1.1);
+.notch:active {
+  transform: translateX(-50%) scale(1.1);
 }
 
-.choices button{
-  font-size: 3em;
+/* Title */
+h1 {
+  margin-top: 60px;
+  margin-bottom: 20px;
+  font-size: 1.5em;
+}
+
+/* Choice buttons layout */
+.choices {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+
+.choice-btn {
+  font-size: 2.5em;
   background-color: white;
-  border: solid 2px;
+  border: 2px solid black;
   width: 90px;
   height: 90px;
-  border-radius: 45px;
-  margin: 10px;
-  margin-bottom: 40px;
+  border-radius: 50%;
   cursor: pointer;
-  transition: background-color 0.15s;
+  transition: background-color 0.15s, transform 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-.choice-btn:hover{
+
+.choice-btn:hover {
   transform: scale(1.1);
-  background-color: rgba(0,0,0,0.05)
+  background-color: rgba(0, 0, 0, 0.05);
 }
 
-.player, .computer{
-  font-size: 1.4em;
+
+.player,
+.computer {
+  font-size: 1.2em;
   font-weight: bold;
+  margin: 5px 0;
 }
 
-#resultDisplay{
-  font-size: 2em;
-  margin-top: 40px;
-  margin-bottom: 30px;
+#resultDisplay {
+  font-size: 1.5em;
   font-weight: bold;
+  margin: 20px 0;
+  text-align: center;
 }
 
-.playerScore{
-  font-size: 18px;
+/* Scores */
+.playerScore,
+.computerScore {
+  font-size: 1em;
   font-weight: 700;
-  margin-bottom: 5px;
-  color:rgba(0, 0, 0, 0.721)
-
+  color: rgba(0, 0, 0, 0.721);
+  margin: 5px 0;
 }
 
-.computerScore{
-  font-size: 18px;
-  font-weight: 700;
-  color:rgba(0, 0, 0, 0.721)
-}
 
-.backSpace{
-  height: 3px;
-  width: 150px;
-  background-color:rgba(0, 0, 0, 0.721);
+.backSpace {
+  height: 4px;
+  width: 120px;
+  background-color: rgba(0, 0, 0, 0.721);
   position: absolute;
-  bottom: 0.1%;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
   border-radius: 4px;
 }
 
-.greenText,#playerDisplay{
+/* Colors */
+.greenText,
+#playerDisplay {
   color: rgba(0, 128, 0, 0.759);
 }
 
-.redText, #computerDisplay{
+.redText,
+#computerDisplay {
   color: tomato;
 }
+
+/* Mobile responsiveness */
+@media (max-width: 480px) {
+  .iphone {
+    border-width: 4px;
+    border-radius: 30px;
+    padding: 15px;
+  }
+
+  .choice-btn {
+    width: 70px;
+    height: 70px;
+    font-size: 2em;
+  }
+
+  #resultDisplay {
+    font-size: 1.2em;
+  }
+
+  .player,
+  .computer,
+  .playerScore,
+  .computerScore {
+    font-size: 0.95em;
+  }
+
+  .notch {
+    height: 25px;
+    width: 60px;
+    top: 10px;
+  }
+
+  .backSpace {
+    width: 80px;
+    height: 3px;
+  }
+}
+
+/* Remove tap highlight on mobile*/
+.notch{
+  -webkit-tap-highlight-color: transparent;
+  outline: none;
+}
+
+.choice-btn {
+  -webkit-tap-highlight-color: transparent;
+  outline: none;
+}
+
